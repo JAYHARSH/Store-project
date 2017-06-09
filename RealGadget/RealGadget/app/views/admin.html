@@ -1,0 +1,20 @@
+﻿
+<div>
+    <form ng-controller="fupController">
+        <input type="text" name="categoryname" ng-model="category.name" />
+        <input type="button"  ng-click="AddCategory(category)" value="AddCategory"/>
+    </form>
+</div>
+<div><form ng-controller="fupController">
+         <input type="text" name="productname" ng-model="gadget.name" />
+         <input type="number" name="productprice" ng-model="gadget.price" />
+         <input type="text" name="productdescription" ng-model="gadget.description" />
+         
+         <select data-ng-model="gadget.categoryid">
+         <option value="">--Select--</option>
+         <option data-ng-repeat="categories in category" value="{{categories.CategoryID}}">{{categories.Name}}</option>
+         </select><br />
+         <input type="file" id="file" name="file" multiple ng-files="getTheFiles($files)" />
+         <input type="button" ng-click="AddGadget(gadget)" value="Upload" />
+</form>
+</div>
